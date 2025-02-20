@@ -1,7 +1,9 @@
 <template>
   <div>
-    <HomeComponet  />
+   
     <h1>App.vue </h1>
+
+    <HomeComponet :userInfo="userInfo"/>
   </div>
 
 
@@ -15,6 +17,15 @@ import HomeComponet from './components/HomeComponet.vue';
 export default {
     components:{
       HomeComponet
+    },
+    data(){
+      return{
+        userInfo:{
+          name :'maliha ',
+        lastname :'shahi',
+        age: 24,
+        }
+      };
     }
 }
 </script>
