@@ -14,6 +14,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+div{
+  color: rgb(39, 196, 78);
+}
 </style>

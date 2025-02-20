@@ -1,6 +1,7 @@
 <template>
   <div>
     <HomeComponet  />
+    <h1>App.vue </h1>
   </div>
 
 
@@ -19,5 +20,7 @@ export default {
 </script>
 
 <style>
-
+div{
+  color: brown;
+}
 </style>
