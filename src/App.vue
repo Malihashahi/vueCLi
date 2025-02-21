@@ -3,7 +3,17 @@
    
     <h1>App.vue </h1>
 
-    <HomeComponet :userInfo="userInfo" @childData="showData($event)"/>
+    <HomeComponet>
+     <template v-slot:ul>
+      <ul >
+          <li v-for="(lang, index) in lang" :key="index">{{ lang }}</li>
+      </ul>
+     </template>
+     <div>
+      <h1>miss shahi</h1>
+    </div>
+    </HomeComponet>
+    
   </div>
 
 
@@ -11,6 +21,7 @@
 </template>
 
 <script>
+
 import HomeComponet from './components/HomeComponet.vue';
 
 
@@ -20,26 +31,18 @@ export default {
     },
     data(){
       return{
-        userInfo:{
-          name :'maliha ',
-        lastname :'shahi',
-        age: 24,
-        },
+       lang :['python','php','html' ]
       };
     },
     methods:{
-      showData(name){
-            this.userInfo.name= name
-      }
+      
     },
-    provide:{
-      user : 'bahar'
-    }
+    
 }
 </script>
 
 <style>
-div{
-  color: brown;
+li{
+  color: red;
 }
 </style>
