@@ -5,7 +5,7 @@
     <h1>lastname :{{ userInfo.lastname }}</h1>
     <h1>age:{{ userInfo.age }}</h1>
     <button @click="sendData">send</button>
-  
+     {{ user }}
   </div>
 </template>
 
@@ -18,6 +18,7 @@ export default {
    props:{
    userInfo :Object
    },
+   inject :['user'],
    data(){
       return{
          name:'nergis'

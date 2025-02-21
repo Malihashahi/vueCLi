@@ -31,6 +31,9 @@ export default {
       showData(name){
             this.userInfo.name= name
       }
+    },
+    provide:{
+      user : 'bahar'
     }
 }
 </script>
