@@ -3,7 +3,7 @@
    
     <h1>App.vue </h1>
 
-    <HomeComponet :userInfo="userInfo"/>
+    <HomeComponet :userInfo="userInfo" @childData="showData($event)"/>
   </div>
 
 
@@ -24,8 +24,13 @@ export default {
           name :'maliha ',
         lastname :'shahi',
         age: 24,
-        }
+        },
       };
+    },
+    methods:{
+      showData(name){
+            this.userInfo.name= name
+      }
     }
 }
 </script>

@@ -4,6 +4,7 @@
     <h1> name :{{ userInfo.name }}</h1>
     <h1>lastname :{{ userInfo.lastname }}</h1>
     <h1>age:{{ userInfo.age }}</h1>
+    <button @click="sendData">send</button>
   
   </div>
 </template>
@@ -16,7 +17,17 @@
 export default {
    props:{
    userInfo :Object
-   }
+   },
+   data(){
+      return{
+         name:'nergis'
+      }
+   },
+    methods:{
+      sendData(){
+        this.$emit('childData',this.name)
+      }
+    }
 
 }
 </script>
