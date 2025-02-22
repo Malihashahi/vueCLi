@@ -1,6 +1,8 @@
 <template>
   <div>
-    <slot name="ul"></slot>
+    <ul>
+       <li v-for="(name , index) in userNames" :key="index">{{ name }}</li>
+      </ul>
     
   </div>
 </template>
@@ -8,13 +10,13 @@
 
 
 <script>
-
+import { userNames } from './mixins.js';
 
 export default {
-   
+   mixins:[userNames],
    data(){
       return{
-       
+        name : 'nergis'
       }
    },
     methods:{

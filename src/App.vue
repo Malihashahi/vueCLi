@@ -4,14 +4,11 @@
     <h1>App.vue </h1>
 
     <HomeComponet>
-     <template v-slot:ul>
-      <ul >
-          <li v-for="(lang, index) in lang" :key="index">{{ lang }}</li>
+      <ul>
+       <li v-for="(name , index) in userNames" :key="index">{{ name }}</li>
       </ul>
-     </template>
-     <div>
-      <h1>miss shahi</h1>
-    </div>
+
+
     </HomeComponet>
     
   </div>
@@ -23,17 +20,14 @@
 <script>
 
 import HomeComponet from './components/HomeComponet.vue';
-
+import { userNames } from './mixins.js';
 
 export default {
+  mixins:[userNames],
     components:{
       HomeComponet
     },
-    data(){
-      return{
-       lang :['python','php','html' ]
-      };
-    },
+   
     methods:{
       
     },
