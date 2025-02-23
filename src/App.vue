@@ -2,35 +2,34 @@
   <div>
    
     <h1>App.vue </h1>
-
     <HomeComponet>
-      <ul>
-       <li v-for="(name , index) in userNames" :key="index">{{ name }}</li>
-      </ul>
-
-
-    </HomeComponet>
-    
-  </div>
-
-
-
+    {{ name }}
+   </HomeComponet>
+ 
+  
+  <teleport to="span">
+   <div><h1>hello teleport</h1></div>
+  </teleport>
+</div>
 </template>
 
 <script>
 
 import HomeComponet from './components/HomeComponet.vue';
-import { userNames } from './mixins.js';
+
 
 export default {
-  mixins:[userNames],
+ 
     components:{
       HomeComponet
     },
+    data(){
+      return{
+        name :'maliha'
+      }
+    }
+   ,
    
-    methods:{
-      
-    },
     
 }
 </script>
