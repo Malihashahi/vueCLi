@@ -6,11 +6,7 @@
     {{ name }}
    </HomeComponet>
  
-  
-  <teleport to="span">
-   <div><h1>hello teleport</h1></div>
-  </teleport>
-</div>
+  </div>
 </template>
 
 <script>

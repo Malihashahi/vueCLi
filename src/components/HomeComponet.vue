@@ -2,8 +2,9 @@
   <div>
    
    <h1>
-    {{ name}}
+    {{ name }}
    </h1>
+   <button @click="updateName">update</button>
     
   </div>
 </template>
@@ -11,20 +12,22 @@
 
 
 <script>
-
+import {ref} from "vue"
 
 export default {
   
-   data(){
-      return{
-        name : 'nergis'
+    
+    setup(){
+      let name = ref("maliha");
+      function updateName(){
+         name.value = "bahar"
       }
-   },
-    methods:{
-      
+      return{
+        name , updateName
+      };
     }
 
-}
+};
 </script>
 
 <style scoped>
