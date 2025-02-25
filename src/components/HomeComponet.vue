@@ -1,44 +1,24 @@
 <template>
   <div>
-   
-   <h1>
-    {{ name }}
-   </h1>
-   <button @click="updateName">update</button>
-    
+    <h2>{{ count }}</h2>
+    <button @click="increment">increment</button>
   </div>
 </template>
 
 
-
 <script>
-import { reactive} from "vue"
+import { ref } from "vue";
+import { useCounter } from "../composables/useCounter.js";
 
 export default {
-  
-    
-    setup(){
-      
-      let obj = reactive({
-         a : "A" ,
-         b : "B" ,
-      });
+  setup() {
+    const counter = ref(2);
+    const { count, increment } = useCounter(counter);
 
-
-      function updateName(){
-         console.log(obj)
-         obj.a = "C"
-      }
-      return{
-        obj , updateName
-      };
-    }
-
+    return { count, increment };
+  },
 };
 </script>
 
 <style scoped>
-div{
-  color: rgb(39, 196, 78);
-}
 </style>
