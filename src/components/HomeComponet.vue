@@ -12,18 +12,25 @@
 
 
 <script>
-import {ref} from "vue"
+import { reactive} from "vue"
 
 export default {
   
     
     setup(){
-      let name = ref("maliha");
+      
+      let obj = reactive({
+         a : "A" ,
+         b : "B" ,
+      });
+
+
       function updateName(){
-         name.value = "bahar"
+         console.log(obj)
+         obj.a = "C"
       }
       return{
-        name , updateName
+        obj , updateName
       };
     }
 
