@@ -1,22 +1,38 @@
 <template>
   <div>
-    <h2>{{ count }}</h2>
-    <button @click="increment">increment</button>
+    <h2>{{name }}  {{  lastname  }}</h2>
+    <button @click="updateName">update</button>
+    
   </div>
 </template>
 
 
 <script>
-import { ref } from "vue";
-import { useCounter } from "../composables/useCounter.js";
-
+import {   computed , ref, watch } from "vue";
 export default {
   setup() {
-    const counter = ref(2);
-    const { count, increment } = useCounter(counter);
+     const name = ref("maliha");
+     const lastname = ("shahi");
+     const fullname = computed(()=>{
+        console.log(name.value)
+        console.log(lastname.value)
+        return name.value + ' ' + lastname.value
+     
+      });
 
-    return { count, increment };
+       watch (name , () => {
+        console.log(name.value)
+        console.log(lastname.value)
+       });
+       function updateName (){
+          name.value = " nergis";
+
+       }
+
+     return{ name , lastname, fullname , updateName}
   },
+
+
 };
 </script>
 
