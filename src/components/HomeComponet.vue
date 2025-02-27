@@ -9,9 +9,9 @@
 //import {   computed , ref, watch } from "vue";
 export default {
   props:['name'],
-  setup(props) {
+  setup(props , {emit}) {
    
-      console.log(props)
+     emit('updateName', 'Maliha');
     return{};
       }
 

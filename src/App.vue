@@ -2,7 +2,7 @@
   <div>
    
     <h1>App.vue </h1>
-    <HomeComponet :name="name" />
+    <HomeComponet :name="name"  @updateName="update"/>
     
  
   </div>
@@ -21,9 +21,12 @@ export default {
     
      setup(){
        const name = ref('bahar jan');
-         
+       
+       function update(newName){
+          name.value= newName;
+       }
 
-       return{ name }
+       return{ name , update}
      }
     
 };
