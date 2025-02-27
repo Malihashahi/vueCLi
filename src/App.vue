@@ -2,9 +2,8 @@
   <div>
    
     <h1>App.vue </h1>
-    <HomeComponet>
-    {{ name }}
-   </HomeComponet>
+    <HomeComponet :name="name" />
+    
  
   </div>
 </template>
@@ -12,22 +11,22 @@
 <script>
 
 import HomeComponet from './components/HomeComponet.vue';
-
+import {ref } from 'vue';
 
 export default {
  
     components:{
       HomeComponet
     },
-    data(){
-      return{
-        name :'maliha'
-      }
-    }
-   ,
-   
     
-}
+     setup(){
+       const name = ref('bahar jan');
+         
+
+       return{ name }
+     }
+    
+};
 </script>
 
 <style>
