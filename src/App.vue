@@ -2,7 +2,7 @@
   <div>
    
     <h1>App.vue </h1>
-    <HomeComponet :name="name"  @updateName="update"/>
+    <HomeComponet :name="name"  />
     
  
   </div>
@@ -11,7 +11,7 @@
 <script>
 
 import HomeComponet from './components/HomeComponet.vue';
-import {ref } from 'vue';
+import {provide, reactive } from 'vue';
 
 export default {
  
@@ -20,13 +20,16 @@ export default {
     },
     
      setup(){
-       const name = ref('bahar jan');
+       const info = reactive({
+         name : 'bahar jan'
+         
+       });
        
-       function update(newName){
-          name.value= newName;
-       }
+      
 
-       return{ name , update}
+       provide('info' , info)
+
+       return{  }
      }
     
 };

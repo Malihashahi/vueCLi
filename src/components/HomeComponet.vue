@@ -1,18 +1,22 @@
 <template>
   <div>
-    <h2>{{ name  }}</h2>
+    <h2>{{ info.name  }}</h2>
     </div>
 </template>
 
 
 <script>
+import { inject } from 'vue';
+
 //import {   computed , ref, watch } from "vue";
 export default {
-  props:['name'],
-  setup(props , {emit}) {
-   
-     emit('updateName', 'Maliha');
-    return{};
+
+  setup() {
+    const info = inject('info');
+
+    console.log(info)
+
+    return{info};
       }
 
   
