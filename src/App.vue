@@ -11,7 +11,7 @@
 <script>
 
 import HomeComponet from './components/HomeComponet.vue';
-import {provide, reactive } from 'vue';
+import {provide, reactive , onMounted} from 'vue';
 
 export default {
  
@@ -27,7 +27,10 @@ export default {
        
       
 
-       provide('info' , info)
+       provide('info' , info);
+        onMounted(() => {
+         console.log(`the component is now mounted.`)
+        })
 
        return{  }
      }
