@@ -2,35 +2,28 @@
   <div>
    
     <h1>App.vue </h1>
-    <HomeComponet :name="name"  />
-    
- 
+      
+   <router-link to="/"> go to Home</router-link>
+    <router-link to="/users">Users</router-link>
+    <router-link to="/posts">Post</router-link>
+    <router-view></router-view>
   </div>
+ 
+
 </template>
 
 <script>
 
-import HomeComponet from './components/HomeComponet.vue';
-import {provide, reactive , onMounted} from 'vue';
+
+
 
 export default {
  
-    components:{
-      HomeComponet
-    },
+  
     
      setup(){
-       const info = reactive({
-         name : 'bahar jan'
-         
-       });
        
-      
-
-       provide('info' , info);
-        onMounted(() => {
-         console.log(`the component is now mounted.`)
-        })
+     
 
        return{  }
      }

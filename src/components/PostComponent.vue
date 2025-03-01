@@ -14,7 +14,7 @@ import { ref } from "vue";
 
 export default {
   setup() {
-    const title = ref("Home Page");
+    const title = ref("Post Page");
 
     return { title };
   },
