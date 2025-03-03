@@ -1,38 +1,25 @@
 <template>
   <div>
-   
-    <h1>App.vue </h1>
-      
-   <router-link to="/"> go to Home</router-link>
-    <router-link to="/users">Users</router-link>
+    <router-link class="mr-1" to="/">Home</router-link>
+    <router-link class="mr-1" to="/users">User</router-link>
     <router-link to="/posts">Post</router-link>
+
     <router-view></router-view>
   </div>
- 
 
+ 
 </template>
 
 <script>
-
-
-
-
 export default {
- 
-  
-    
-     setup(){
-       
-     
-
-       return{  }
-     }
-    
+  setup() {
+    return {};
+  },
 };
 </script>
 
 <style>
-li{
-  color: red;
+.mr-1{
+  margin-right: 1rem;
 }
 </style>
