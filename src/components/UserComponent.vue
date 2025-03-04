@@ -14,15 +14,15 @@
 <script>
 
 import { ref } from "vue";
-import { useRouter } from "vue-router";
+import { useRouter , useRoute } from "vue-router";
 export default {
   setup() {
     const title = ref("User Page");
   
 
   const router = useRouter();
-  //const route = useRoute();
-
+  const route = useRoute();
+  console.log(route.params)
  function goToHome(){
     router.push('/')
  }
